@@ -80,4 +80,3 @@ class InceptionSmall(nn.Module):
         x = torch.flatten(x,1)
         x = fc(x)
         return x
-        return torch.cat([branch1, branch2], 1)
