@@ -39,7 +39,7 @@ class DownsampleModule(nn.Module):
         super(DownsampleModule, self).__init__()
     
         self.branch1 = nn.Sequential(ConvModule(in_channels, f_3x3, kernel_size=3, stride=2, padding=0))
-        self.branch2 = nn.MaxPool2d(3, stride=2, padding=1, ceil_mode=True)
+        self.branch2 = nn.MaxPool2d(3, stride=2)
     
     def forward(self, x):
         branch1 = self.branch1(x)
@@ -62,21 +62,21 @@ class InceptionSmall(nn.Module):
         self.inception7 = InceptionModule(in_channels=240,f_1x1=176,f_3x3=160)
         self.inception8 = InceptionModule(in_channels=336,f_1x1=176,f_3x3=160)
         self.meanpool = nn.AdaptiveAvgPool2d((7,7))
-        self.fc = nn.Linear(1024, num_classes)
+        self.fc = nn.Linear(16464, num_classes)
        
     def forward(self, x):
         x = self.conv1(x)
         x = self.inception1(x)
         x = self.inception2(x)
-        x = self.donw1(x)
+        x = self.down1(x)
         x = self.inception3(x)
         x = self.inception4(x)
         x = self.inception5(x)
         x = self.inception6(x)
-        x = self.donw2(x)
+        x = self.down2(x)
         x = self.inception7(x)
         x = self.inception8(x)
         x = self.meanpool(x)
         x = torch.flatten(x,1)
-        x = fc(x)
+        x = self.fc(x)
         return x
