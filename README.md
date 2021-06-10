@@ -35,6 +35,10 @@ MLP-512, Inception (tiny), Wide ResNet, AlexNet, Inception_v3
 
 <img src="imgs/Effect of Implicit Regularisation on Generalization Performance.png">
 
+### Checkpoint files of Model Trained on ImageNet (Explicit Regularization):<br>
+- w/o Augmentation, Learning Rate Scheduler, Dropout: [checkpoint](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/madhav_agarwal_research_iiit_ac_in/EZWUXUvNGQBCgcJcNxcFg9wB0aYKnly-6dGN8XQWMGTwMA?e=2jlPMu) <br>
+- w/o Augmentation, w/o Learning Rate Scheduler, Dropout : [checkpoint](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/madhav_agarwal_research_iiit_ac_in/EYu6wOz7pHxKlo-njCcCRNcBBQxZNhVA_KZnajLpfY9x-Q?e=1KAW6n) <br>
+- with Augmentation, Learning Rate Scheduler, Dropout : [checkpoint](https://iiitaphyd-my.sharepoint.com/:u:/g/personal/madhav_agarwal_research_iiit_ac_in/EfM9FrpDFOxLvDBTgfwr9yABsQev1rBbHYfUQDg4mj_hfQ?e=hHIZG8)
 
 ### Team Members:
 - Siddhant Bansal ([@Sid2697](https://github.com/Sid2697))
